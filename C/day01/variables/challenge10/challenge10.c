@@ -2,12 +2,12 @@
 #include<math.h>
 
 int main(){
-    double p,volume;
-    int r;
+    int r,volume;
+    const float p = 3.14;
     printf("entrer le rayon de la sephere: ");
     scanf("%d",&r);
     
-    volume = (4 / 3) * 3.14 * pow((r),3);
-    printf("le volume d'une sphere est: %lf", volume);
+    volume = (4 / 3) * r * pow((r),3);
+    printf("le volume d'une sphere est: %d", volume);
     return 0;
 }
