@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 int main()
 {
@@ -10,7 +11,7 @@ int main()
     scanf("%d",&b);
     printf("entrer le 3eme nombre: ");
     scanf("%d",&c);
-    moyenneG = (a * b * c)^(1/3);
+    moyenneG = pow((a * b * c),(1/3));
 
     printf("la moyenne geometrique est %d", moyenneG);
     return 0;
