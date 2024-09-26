@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 int main() {
-    int n,m = 4;
+    int n,m;
+    printf("entrer un valeur:");
+    scanf("%d",&m);
     for(n = 1; n <= 10; n++)
     {
         
