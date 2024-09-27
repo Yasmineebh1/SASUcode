@@ -1,13 +1,13 @@
 #include<stdio.h>
-#include<math.h>
+
 
 
 int main(){
     char n;
     printf("entrer un alphabet: ");
-    scanf("%d",&n);
+    scanf("%c",&n);
 
-    if(n >= 'A' && n <= 'Z')
+    if(n >= 65 && n <= 90)
         printf("donne");
     else
         printf("veuillez entrer un majuscule!!!!!");
