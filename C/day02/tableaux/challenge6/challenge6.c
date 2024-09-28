@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 int main(){
-    int t[100],i,n,mult;
-
+    int t[100],i,j,n,f;
+    f = 0;
     printf("entrer la taille de tableau: ");
     scanf("%d",&n);
 
@@ -10,9 +10,17 @@ int main(){
         printf("entre le nombre %d:",i+1);
         scanf("%d",&t[i]);
     }
-    mult = 1;
+    printf("entre le factoriel des nombres :");
+    scanf("%d",&f);
+
     for(i = 0; i < n; i++){
-        mult = mult * t[i];
+        t[i] = t[i] * f;
     }
-     printf("la multiplication est: %d",mult);
+   int p = 0;
+   while (n > p)
+   {
+        printf ("res %d :",t[p]);
+        p++;
+   }
+   return (0);
 }
