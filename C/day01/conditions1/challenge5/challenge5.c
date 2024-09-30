@@ -20,27 +20,28 @@ int main(){
     {
     case 1:
         mois = annee * 12;
-        printf("l\'annee est: %d", &mois);
+        printf("l\'annee est: %d", mois);
         break;
     case 2:
-        jours = mois * 365;
-        printf("les jours est: %d", &jours);
+        jours = annee * 365;
+        printf("les jours est: %d", jours);
         break;
     case 3:
         heures = jours * 24;
-        printf("l\'heure est: %d", &heures);
+        printf("l\'heure est: %d", heures);
         break;
     case 4:
         minutes = heures * 60;
-        printf("minutes est: %d", &minutes);
+        printf("minutes est: %d", minutes);
         break;
     case 5:
         secondes = minutes * 60 ;
-        printf("secondes est: %d", &setbuf);
+        printf("secondes est: %d", setbuf);
         break;
     default:
+        printf("incorrect!");
         break;
     }
 
-    printf("entrer ")
+    // printf("entrer ");
 }
