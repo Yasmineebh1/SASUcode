@@ -36,10 +36,11 @@ void afficher()
     for (i = 0; i < n; i++)
     {
 
-        printf("%s", &titre_livre[i]);
-        printf("%s", &auteur_livre[i]);
-        printf("%s", &prix_livre[i]);
-        printf("%s", &quantite_stock[i]);
+        printf("le titre: %s\n", &titre_livre[i]);
+        printf("Auteur: %s\n", &auteur_livre[i]);
+        printf("Prix de livre: %s\n", &prix_livre[i]);
+        printf("Auantite de stock: %s\n", &quantite_stock[i]);
+        printf("\n");
     }
 }
 void update()
@@ -52,7 +53,7 @@ void update()
 
     for (i = 0; i < n; i++)
     {
-        if (strcmp(nom,titre_livre[i] == 0))
+        if (strcmp(nom, titre_livre[i]) == 0)
         {
             printf("entrer le stock a ajoute: ");
             scanf("%s", &quantite_stock[i]);
@@ -67,48 +68,48 @@ void update()
     }
     // break;
 }
-void delete(){
+void delete()
+{
     int i, n;
     char sup[100];
     int found = 0;
     printf("entrer le nom de livre que voules vous supprimez: ");
     scanf("%s", &sup);
-    if (strcmp(sup,titre_livre[i] == 0))
-        {
-            strcpy(titre_livre[i],titre_livre[i - 1]);
-            strcpy(auteur_livre[i],auteur_livre[i - 1]);
-            prix_livre[i] = prix_livre[i-1];
-            quantite_stock[i] = quantite_stock[i-1];
-            i--;
-            
-            printf("le livre est supprimer");
-            found = 1;
-            break;
-        }
-    
+    if (strcmp(sup, titre_livre[i]) == 0)
+    {
+        strcpy(titre_livre[i], titre_livre[i - 1]);
+        strcpy(auteur_livre[i], auteur_livre[i - 1]);
+        prix_livre[i] = prix_livre[i - 1];
+        quantite_stock[i] = quantite_stock[i - 1];
+        i--;
+        found = 1;
+        printf("le livre est supprimer");
+
+     //   break;
+    }
+
     if (!found)
     {
         printf("le livre no trouve!!");
     }
-
 }
 int main()
 {
 
     int choix;
-    printf("Gestion de Stock:\n");
-    printf("1. Ajouter un Livre au Stock:\n");
-    printf("2. Afficher tous les livres disponibles:\n");
-    printf("3. Rechercher un livre par son titre.:\n");
-    printf("4. Mettre a jour la quantite d'un livre:\n");
-    printf("5. Supprimer un livre du stock:\n");
-    printf("6. Afficher le nombre total de livres en stock:\n");
-    printf("7. Quitter:\n");
-    printf("Entrer votre choix: ");
-    scanf("%d", &choix);
-
     do
     {
+        printf("Gestion de Stock:\n");
+        printf("1. Ajouter un Livre au Stock:\n");
+        printf("2. Afficher tous les livres disponibles:\n");
+        printf("3. Rechercher un livre par son titre.:\n");
+        printf("4. Mettre a jour la quantite d'un livre:\n");
+        printf("5. Supprimer un livre du stock:\n");
+        printf("6. Afficher le nombre total de livres en stock:\n");
+        printf("7. Quitter:\n");
+        printf("Entrer votre choix: ");
+        scanf("%d", &choix);
+
         switch (choix)
         {
         case 1:
@@ -117,33 +118,15 @@ int main()
         case 2:
             afficher();
             break;
-        case 3:
+        case 4:
             update();
+            break;
+        case 5:
+            delete();
             break;
         default:
             break;
         }
     } while (choix != 7);
-    return 0;
     // printf("veuillez entrer le nombre entre 1 et 6!!!");
 }
-
-// auteur_info array[200];
-// void compte_livre(){
-//     if(count_book == 0)
-//         printf("il n ya pas de livres");}
-//     else{
-
-// printf("les informations:\n ");
-// printf("1.Ajouter le titre du livre: ");
-// scanf("%d^\n",&array[0].);
-// printf("Ajouter Auteur du livre: ");
-// scanf("%d^\n",&auteur_livre);
-// printf("Ajouter Prix du livre: ");
-// scanf("%d^\n",&prix_livre);
-// printf("Ajouter Quantité en stock: ");
-// scanf("%d^\n",&quantite_stock);
-
-//     }
-
-// }
