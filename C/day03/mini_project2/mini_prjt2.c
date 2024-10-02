@@ -62,7 +62,25 @@ void modifier()
     if(!found)
         printf("non trouve!!!\n");
 }
+void afficher(){
+    int i;
+    struct Contact contact;
 
+    printf("entrer le nombre des contacts que voulez vous afficher:");
+    scanf("%d", &n);
+    for (i = 0; i < n; i++)
+    {
+
+        printf("Nom: %s\n", &contact.nom[i]);
+        printf("Numero de telephone : %s\n", &contact.num_tele[i]);
+        printf("Adresse e-mail: %s\n", &contact.email[i]);
+        printf("\n");
+    }    
+}
+void suppression(){
+
+
+}
 int main()
 {
     int choix, i;
@@ -86,6 +104,12 @@ int main()
             break;
         case 2:
             modifier();
+            break;
+        case 3:
+            suppression();
+            break;
+        case 4:
+            afficher();
             break;
         default:
             break;
