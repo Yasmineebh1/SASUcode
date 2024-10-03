@@ -44,25 +44,25 @@ void modifier()
     scanf("%s", &nomm);
     for (i = 0; i < n; i++)
     {
-        if(strcmp(nomm,contact.nom[i]))
+        if (strcmp(nomm, contact.nom[i]))
         {
             found = 1;
             printf("entrer le numero de telephone que voulez vous modifier: ");
             scanf("%s", &numtele);
-            strcpy(numtele,contact.num_tele[i]);
+            strcpy(numtele, contact.num_tele[i]);
             printf("entrer adresse email que voulez vous modifier: ");
             scanf("%s", &mail);
-            strcpy(mail,contact.email[i]);
-            
-           // found++;
+            strcpy(mail, contact.email[i]);
+
+            // found++;
             printf("modifier avec succees\n");
         }
-        
     }
-    if(!found)
+    if (!found)
         printf("non trouve!!!\n");
 }
-void afficher(){
+void afficher()
+{
     int i;
     struct Contact contact;
 
@@ -75,11 +75,57 @@ void afficher(){
         printf("Numero de telephone : %s\n", &contact.num_tele[i]);
         printf("Adresse e-mail: %s\n", &contact.email[i]);
         printf("\n");
-    }    
+    }
 }
-void suppression(){
+void rechercher()
+{
+    struct Contact contact;
+    char recherche[100];
+    int found = 0;
 
+    printf("Entrer le nom du contact à rechercher: ");
+    scanf("%s", recherche);
 
+    for (int i = 0; i < n; i++) {
+        if (strcmp(recherche, contact.nom[i]) == 0) {
+            printf("Contact trouvé:\n");
+            printf("Nom: %s\n", contact.nom[i]);
+            printf("Numero de telephone: %s\n", contact.num_tele[i]);
+            printf("Adresse e-mail: %s\n", contact.email[i]);
+            found = 1;
+            break; 
+        }
+    }
+    if (!found) {
+        printf("Contact non trouvé!!!\n");
+    }
+}
+void suppression()
+{
+
+    char nomm[100];
+    int found = 0;
+    struct Contact contact;
+
+    printf("Entrer le nom du contact à supprimer: ");
+    scanf("%s", nomm);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (strcmp(nomm, contact.nom[i]) == 0)
+        {
+            found = 1;
+
+            for (int j = i; j < n - 1; j++)
+            {
+                strcpy(contact.nom[j], contact.nom[j + 1]);
+                strcpy(contact.num_tele[j], contact.num_tele[j + 1]);
+                strcpy(contact.email[j], contact.email[j + 1]);
+            }
+            n--;
+            printf("Contact supprimé avec succès.\n");
+        }
+    }
 }
 int main()
 {
